@@ -1,0 +1,200 @@
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.72);
+  padding: 2.5rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+  backdrop-filter: blur(6px);
+}
+
+.hero__eyebrow {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #475569;
+}
+
+.hero__title {
+  margin: 0;
+  font-size: clamp(2.5rem, 6vw, 3.75rem);
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.hero__subtitle {
+  margin: 0;
+  font-size: 1rem;
+  color: #334155;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.86);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(148, 163, 184, 0.25);
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  font-size: 1.5rem;
+  color: #0f172a;
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.125rem;
+  color: #1e293b;
+}
+
+.card p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #334155;
+}
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+}
+
+.carousel__button {
+  background: #0f172a;
+  color: #f8fafc;
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.carousel__button:hover,
+.carousel__button:focus-visible {
+  background: #1d4ed8;
+}
+
+.carousel__counter {
+  font-size: 0.875rem;
+  color: #475569;
+  font-weight: 600;
+}
+
+.carousel__viewport {
+  overflow: hidden;
+  border-radius: 14px;
+  background: rgba(241, 245, 249, 0.58);
+}
+
+.carousel__track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.carousel__slide {
+  min-width: 100%;
+  padding: 1.75rem 1.5rem;
+}
+
+.carousel__slide h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: #1e293b;
+}
+
+.carousel__slide ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: #334155;
+}
+
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.badge {
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  background: #0f172a;
+  color: #f8fafc;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.list-columns {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.list-columns ul {
+  padding-left: 1.25rem;
+  margin: 0;
+  color: #334155;
+}
+
+.card ol {
+  padding-left: 1.25rem;
+  margin: 0;
+  color: #334155;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+  color: #0f172a;
+}
+
+.contact-label {
+  font-weight: 600;
+  color: #334155;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .list-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
