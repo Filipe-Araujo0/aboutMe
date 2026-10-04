@@ -1,0 +1,26 @@
+Legend: path:{lines}  (lines = total number of lines via wc -l)
+.
+├── archive
+│   └── v1
+│       └── src
+│           ├── App.css:201
+│           ├── App.tsx:238
+│           ├── index.css:24
+│           └── main.tsx:11
+├── bugs
+│   ├── browser-cache-stale.md:7
+│   └── cloudfront-invalidation-glob.md:5
+├── build-archive.cjs:1
+├── build-current.py:30
+├── build.py:31
+├── gitree.txt:1
+├── LICENSE:24
+├── Makefile:73
+├── package.json:14
+├── package-lock.json:524
+├── README.md:51
+└── scripts
+    ├── deploy_s3_cf.sh:43
+    └── install_aws_cli.sh:27
+
+6 directories, 17 files

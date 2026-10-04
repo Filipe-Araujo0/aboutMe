@@ -26,8 +26,9 @@ fi
 [ -d "$BUILD_DIR" ] || { echo "Diretorio de build inexistente: $BUILD_DIR"; exit 1; }
 
 echo "Subindo para s3://$BUCKET a partir de $BUILD_DIR"
-aws s3 sync "$BUILD_DIR/" "s3://$BUCKET" --delete --only-show-errors --profile "$PROFILE"
+aws s3 sync "$BUILD_DIR/" "s3://$BUCKET" --delete --cache-control 'public, max-age=60, must-revalidate' --only-show-errors --profile "$PROFILE"
 
+set -f
 PATHS="/index.html"
 if [ "$PURGE_ALL" = "true" ]; then
   PATHS="/*"

@@ -46,4 +46,6 @@ make deploy PURGE_ALL=true
 
 Historical pages require the host to resolve directory paths to their `index.html` files. CloudFront's default root object alone does not provide this for nested directories; configure a URI rewrite for directory requests, or use explicit `index.html` URLs. Invalidate changed nested pages, styles, JavaScript and the version catalog as well as the root HTML; `PURGE_ALL=true` covers these.
 
+Cache policy updated 2026-10-04T07:57:15-03:00: published objects use `Cache-Control: public, max-age=60, must-revalidate`, so browsers can reuse assets for one minute and revalidate afterward.
+
 The independent Sites publication can be viewed at https://filipe-through-time.filipeee0.chatgpt.site.

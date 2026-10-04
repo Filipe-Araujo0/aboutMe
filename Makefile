@@ -46,13 +46,14 @@ ifndef SKIP_CHECK
 endif
 	@[ -d "$(BUILD_DIR)" ] || { echo "Diretório de build inexistente: $(BUILD_DIR)"; exit 1; }
 	@echo "Sincronizando $(BUILD_DIR) -> s3://$(BUCKET)"
-	@aws s3 sync "$(BUILD_DIR)/" "s3://$(BUCKET)" --delete --only-show-errors --profile "$(PROFILE)"
+	@aws s3 sync "$(BUILD_DIR)/" "s3://$(BUCKET)" --delete --cache-control "public, max-age=60, must-revalidate" --only-show-errors --profile "$(PROFILE)"
 
 invalidate:
 ifndef SKIP_CHECK
 	@$(MAKE) --no-print-directory check
 endif
-	@paths="/index.html"; \
+	@set -f; \
+	paths="/index.html"; \
 	if [ "$(PURGE_ALL)" = "true" ]; then \
 	  paths="/*"; \
 	fi; \
