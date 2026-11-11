@@ -19,11 +19,13 @@ Open http://localhost:8000. Build output is static HTML, CSS, JavaScript and JSO
 ## Routes
 
 - `/`: latest chapter (v3).
-- `/versions/v1/`: original React portfolio, rendered directly beside the timeline.
-- `/versions/v2/`: first editorial redesign.
-- `/versions/v3/`: current professional introduction.
-- `/changes/v1-v2/` and `/changes/v2-v3/`: written comparisons.
+- `/versions/v1/index.html`: original React portfolio, rendered directly beside the timeline.
+- `/versions/v2/index.html`: first editorial redesign.
+- `/versions/v3/index.html`: current professional introduction.
+- `/changes/v1-v2/index.html` and `/changes/v2-v3/index.html`: written comparisons.
 - `/versions.json`: catalog consumed by the timeline.
+
+Run the route check against the production host with `python3 scripts/check_version_routes.py --base-url https://filipeee0.com`.
 
 The v1 date is based on content commit `1429ba5d5d526ad262e34832b37a9c2d8f6ba254`, dated November 2, 2025 in America/Sao_Paulo. It is a commit date, not the original launch date.
 
@@ -33,6 +35,7 @@ The v1 date is based on content commit `1429ba5d5d526ad262e34832b37a9c2d8f6ba254
 - `build.py`: historical v1/v2 shells, content and styles.
 - `build-archive.cjs`: original React bundle, using the automatic JSX runtime.
 - `build-current.py`: v3, its comparison page and shared timeline catalog.
+- `finalize_routes.py`: canonical `/index.html` URLs for nested static routes.
 
 To add a chapter, preserve the earlier page and its assets, create a new version and comparison, update the catalog, and place the latest chapter at the root. Minor corrections to the current chapter can remain in that chapter.
 
@@ -44,7 +47,7 @@ The existing Makefile and scripts are retained and still upload `dist/`. Neither
 make deploy PURGE_ALL=true
 ```
 
-Historical pages require the host to resolve directory paths to their `index.html` files. CloudFront's default root object alone does not provide this for nested directories; configure a URI rewrite for directory requests, or use explicit `index.html` URLs. Invalidate changed nested pages, styles, JavaScript and the version catalog as well as the root HTML; `PURGE_ALL=true` covers these.
+Path behavior updated 2026-11-10T16:29:33-03:00: version and comparison links now use explicit `index.html` URLs because CloudFront's default root object does not resolve nested directories. The local Python server may serve slash-only directory URLs anyway, so verify the production host with the route-check script. Invalidate changed nested pages, styles, JavaScript and the version catalog as well as the root HTML; `PURGE_ALL=true` covers these.
 
 Cache policy updated 2026-10-04T07:57:15-03:00: published objects use `Cache-Control: public, max-age=60, must-revalidate`, so browsers can reuse assets for one minute and revalidate afterward.
 
