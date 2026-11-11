@@ -2,7 +2,9 @@
   "name": "filipe-timeline-portfolio",
   "private": true,
   "scripts": {
-    "build": "python3 build.py && node build-archive.cjs && python3 build-current.py && python3 finalize_routes.py",
+    "build": "python3 build.py && node build-archive.cjs && python3 build-current.py && python3 build-v4.py && python3 finalize_routes.py",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "dev": "python3 -m http.server 8000 --directory dist",
     "preview": "python3 -m http.server 8000 --directory dist"
   },
@@ -10,5 +12,8 @@
     "esbuild": "^0.25.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.10"
   }
 }

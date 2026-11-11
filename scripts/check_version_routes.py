@@ -152,7 +152,7 @@ def main() -> int:
                 f"{version_id or '<unknown>'}: invalid catalog path {path!r}"
             )
             continue
-        expected_title = (
+        expected_title = version.get("pageTitle") or (
             f"Version {int(version_id[1:]):02d}"
             if version_id != latest
             else version.get("title", "")

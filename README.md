@@ -2,7 +2,7 @@
 
 Personal portfolio in English, with a timeline of independently styled versions and authored comparison pages.
 
-The current chapter introduces Filipe as **Business Analyst & Developer**, covers business analysis, financial modeling and development with AI agents, and highlights curiosity and learning. It returns to the original light cards, rounded corners, soft shadows and blue-gray gradient. It does not name the employer or include a projects section.
+The current chapter introduces Filipe as **Business Analyst & Developer** and adds selected open-source projects and upstream contributions. The project list covers AI-agent tooling, public data, developer analytics, API rate limits, and presentation files; the contribution list records two pull requests that were open on November 10, 2026. This addition was recorded on 2026-11-10T22:02:18-03:00.
 
 ## Build and run
 
@@ -18,12 +18,15 @@ Open http://localhost:8000. Build output is static HTML, CSS, JavaScript and JSO
 
 ## Routes
 
-- `/`: latest chapter (v3).
+- `/`: latest chapter (v4).
 - `/versions/v1/index.html`: original React portfolio, rendered directly beside the timeline.
 - `/versions/v2/index.html`: first editorial redesign.
-- `/versions/v3/index.html`: current professional introduction.
-- `/changes/v1-v2/index.html` and `/changes/v2-v3/index.html`: written comparisons.
+- `/versions/v3/index.html`: professional introduction and working principles.
+- `/versions/v4/index.html`: professional introduction, open-source projects, and contributions.
+- `/changes/v1-v2/index.html`, `/changes/v2-v3/index.html`, and `/changes/v3-v4/index.html`: written comparisons.
 - `/versions.json`: catalog consumed by the timeline.
+
+Route inventory updated 2026-11-10T22:02:18-03:00.
 
 Run the route check against the production host with `python3 scripts/check_version_routes.py --base-url https://filipeee0.com`.
 
@@ -35,6 +38,7 @@ The v1 date is based on content commit `1429ba5d5d526ad262e34832b37a9c2d8f6ba254
 - `build.py`: historical v1/v2 shells, content and styles.
 - `build-archive.cjs`: original React bundle, using the automatic JSX runtime.
 - `build-current.py`: v3, its comparison page and shared timeline catalog.
+- `build-v4.py`: v4, its comparison page and latest catalog entry.
 - `finalize_routes.py`: canonical `/index.html` URLs for nested static routes.
 
 To add a chapter, preserve the earlier page and its assets, create a new version and comparison, update the catalog, and place the latest chapter at the root. Minor corrections to the current chapter can remain in that chapter.
