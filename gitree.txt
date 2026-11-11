@@ -11,19 +11,20 @@ Legend: path:{lines}  (lines = total number of lines via wc -l)
 │   ├── browser-cache-stale.md:7
 │   ├── cloudfront-invalidation-glob.md:5
 │   └── version-sidebar-access-denied.md:64
-├── build-archive.cjs:1
+├── build-archive.cjs:15
 ├── build-current.py:30
 ├── build.py:31
+├── build-v4.py:143
 ├── finalize_routes.py:45
 ├── gitree.txt:1
 ├── LICENSE:24
 ├── Makefile:73
-├── package.json:14
-├── package-lock.json:524
-├── README.md:54
+├── package.json:19
+├── package-lock.json:543
+├── README.md:58
 └── scripts
     ├── check_version_routes.py:214
     ├── deploy_s3_cf.sh:43
     └── install_aws_cli.sh:27
 
-6 directories, 20 files
+6 directories, 21 files
